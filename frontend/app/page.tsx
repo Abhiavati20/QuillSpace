@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      <div className="md:w-1/2 w-full h-full flex justify-center items-center flex-col">
+      <div className="md:w-1/2 w-full h-screen flex justify-center items-center flex-col">
         <h1 className="text-4xl font-bold italic md:hidden">Quill Space</h1>
         <div className="w-1/2 flex flex-col mx-auto my-2">
           <Label htmlFor="name" className="my-1 text-lg">Name</Label>
@@ -74,7 +74,7 @@ export default function Home() {
         <Button size="lg" className=" mt-5 w-1/2 mx-auto text-lg" onClick={handleSignup}>{loading ? "Loading..." : "Sign Up"}</Button>
         <p className="my-2 italic font-extralight text-sm">Already have an account? <Link href="/signin" className="font-bold">Sign In</Link></p>
       </div>
-      <div className="hidden w-1/2 h-full md:flex justify-center border-2 rounded-md items-center flex-col">
+      <div className="hidden w-1/2 h-screen md:flex justify-center bg-slate-50 rounded-md items-center flex-col">
         <h1 className="text-4xl font-bold italic">Quill Space</h1>
       </div>
     </div>

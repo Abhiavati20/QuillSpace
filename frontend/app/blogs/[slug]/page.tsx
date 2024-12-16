@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-async-client-component */
 "use client";
 
+import Navbar from "@/components/Navbar/Navbar";
 import { BLOG } from "@/lib/utils";
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
@@ -32,7 +33,9 @@ export default function Home() {
 
 
     return (
-        <div className="flex p-5 w-full mx-auto justify-center items-center">
+        <>
+            <Navbar />
+            <div className="flex p-5 w-full mx-auto justify-center items-center">
             {
                 !blog ? "Loading..." :
                     <div className="flex w-full border-2 flex-col p-5 rounded-md">
@@ -41,6 +44,7 @@ export default function Home() {
                         <span className="text-md font-semibold">Author ID: {blog.authorId}</span>
                     </div>
             }
-        </div>
+            </div>
+        </>
     )
 }

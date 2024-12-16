@@ -1,5 +1,6 @@
 "use client";
 import { BlogComponent } from "@/components/BlogComponent/BlogComponent";
+import Navbar from "@/components/Navbar/Navbar";
 import { BLOG } from "@/lib/utils";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -28,19 +29,22 @@ export default function Home() {
         fetchBlogs()
     }, [])
     return (
-        <div className="flex w-full h-full justify-center items-center">
-            {
-                blogs.length === 0
-                    ? "Loading..." :
-                    <div className="w-3/4 mx-auto flex flex-col justify-center items-center">
-                        {blogs.map((blog, index) =>
-                            <BlogComponent
-                                key={index}
-                                blog={blog}
-                            />
-                        )}
-                    </div>
-            }
-        </div>
+        <>
+            <Navbar />
+            <div className="flex w-full h-full justify-center items-center">
+                {
+                    blogs.length === 0
+                        ? "Loading..." :
+                        <div className="w-3/4 mt-4 mx-auto flex flex-col justify-center items-center">
+                            {blogs.map((blog, index) =>
+                                <BlogComponent
+                                    key={index}
+                                    blog={blog}
+                                />
+                            )}
+                        </div>
+                }
+            </div>
+        </>
     )
 }
